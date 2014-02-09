@@ -1,0 +1,36 @@
+<html>
+ <head>
+ 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+	<style type="text/css">
+		h1, h2{
+			margin-left:1em;
+		}
+		.container-fluid{
+			margin-left:2em;
+		}
+		#fruit_labels{
+			margin-left:1em;
+		}
+	</style>
+ </head>
+<body>
+	<h2>Fruit Selector</h2>
+	<div class="container-fluid">
+		<div class="row">
+			 <form action="/fruit" role="form" method="POST">
+			 	<p>What is your favorite fruit?</p>
+			 	<div class="form-group">
+			 	{% for fruit in fruits %}
+			 		<div>
+			 			<label id="fruit_labels"><input type="radio" name="fruit" value="{{fruit}}"></input><p style="display:inline; margin-left:1em">{{fruit}}</p></label>
+			 		</div>
+			 	{% endfor %}
+			 	</div>
+			 	<button type="submit" class="btn btn-primary" value="Submit">Submit</button>
+			 </form>
+		</div><!--row-->
+	</div><!--container-flude-->
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+</body>
+</html><!doctype HTML>
